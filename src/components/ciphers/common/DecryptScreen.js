@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
-import {Button, Container, Content, Form, Text, Textarea} from 'native-base'
+import {Button, Content, Form, Text, Textarea} from 'native-base'
 import {OutputTextCard} from './OutputTextCard'
+import {ScrollView} from 'react-native'
 
 export const DecryptScreen = ({decryptText}) => {
     const [inputText, setInputText] = useState('')
@@ -13,7 +14,7 @@ export const DecryptScreen = ({decryptText}) => {
     }
 
     return (
-        <Container>
+        <ScrollView>
             <Content padder>
                 <Form>
                     <Textarea style={{marginBottom: 15}}
@@ -35,7 +36,7 @@ export const DecryptScreen = ({decryptText}) => {
                 </Form>
                 <OutputTextCard title='Decrypted text' outputText={outputText}/>
             </Content>
-        </Container>
+        </ScrollView>
     )
 }
 

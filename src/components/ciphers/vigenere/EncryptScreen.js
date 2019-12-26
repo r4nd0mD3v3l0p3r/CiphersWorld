@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import {Button, Container, Content, Form, Text, Textarea} from 'native-base'
+import {Button, Content, Form, Text, Textarea} from 'native-base'
 import {charactersOnly} from '../../../utils/stringUtils'
 import {encryptText} from '../../../ciphers/vigenere'
 import {showInvalidKeywordToast} from './validation'
 import {OutputTextCard} from '../common/OutputTextCard'
+import {ScrollView} from 'react-native'
 
 export const EncryptScreen = () => {
     const [inputText, setInputText] = useState('')
@@ -20,7 +21,7 @@ export const EncryptScreen = () => {
     }
 
     return (
-        <Container>
+        <ScrollView>
             <Content padder>
                 <Form>
                     <Textarea style={{marginBottom: 15}}
@@ -53,6 +54,6 @@ export const EncryptScreen = () => {
                 </Form>
                 <OutputTextCard title='Encrypted text' outputText={outputText}/>
             </Content>
-        </Container>
+        </ScrollView>
     )
 }

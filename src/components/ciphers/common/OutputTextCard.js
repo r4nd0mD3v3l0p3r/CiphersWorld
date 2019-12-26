@@ -25,8 +25,7 @@ export const OutputTextCard = ({title, outputText}) => {
     return (
         <Card>
             <CardItem header
-                      bordered
-                      style={{marginBottom: 15}}>
+                      bordered>
                 <Text>{title}</Text>
             </CardItem>
             <CardItem>

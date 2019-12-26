@@ -12,7 +12,7 @@ export const ShiftPicker = ({selectedValue, onValueChange}) => {
                 mode="dropdown"
                 selectedValue={selectedValue}
                 onValueChange={v => onValueChange(v)}>
-                {range.map(x => (<Picker.Item label={`${x}`} value={`${x}`}/>))}
+                {range.map(x => (<Picker.Item key={`${x}`} label={`${x}`} value={`${x}`}/>))}
             </Picker>
         </Item>
     )
