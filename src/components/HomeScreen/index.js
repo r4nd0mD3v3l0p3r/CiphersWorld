@@ -6,13 +6,15 @@ import {createAppContainer} from 'react-navigation'
 import {AboutScreen} from '../AboutScreen/AboutScreen'
 import {AtbashScreen} from '../ciphers/atbash/AtbashScreen'
 import {CaesarScreen} from '../ciphers/caesar/CaesarScreen'
+import {VigenereScreen} from '../ciphers/vigenere/VigenereScreen'
 
 const HomeScreenRouter = createDrawerNavigator(
     {
         Home: {screen: HomeScreen},
         About: {screen: AboutScreen},
         Atbash: {screen: AtbashScreen},
-        Caesar: {screen: CaesarScreen}
+        Caesar: {screen: CaesarScreen},
+        Vigenere: {screen: VigenereScreen}
     },
     {
         contentComponent: props => <SideBar {...props} />,

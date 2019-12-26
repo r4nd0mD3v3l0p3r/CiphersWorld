@@ -5,12 +5,15 @@ import {CommonScreen} from '../common/CommonScreen'
 const cipherDescription = 'The Atbash cipher is a monoalphabetic substitution cipher, originally used to encrypt the Hebrew alphabet.'
 const referenceLinks = [{site: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Atbash'}]
 
-export const AtbashScreen = () => {
+export const AtbashScreen = ({navigation}) => {
     return (
-        <CommonScreen decryptText={encryptText}
-                      encryptText={decryptText}
-                      cipherDescription={cipherDescription}
-                      referenceLinks={referenceLinks}
+        <CommonScreen
+            navigation={navigation}
+            headerTitle={'Atbash cipher'}
+            decryptText={encryptText}
+            encryptText={decryptText}
+            cipherDescription={cipherDescription}
+            referenceLinks={referenceLinks}
         />
     )
 }

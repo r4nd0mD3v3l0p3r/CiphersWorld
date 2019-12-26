@@ -5,10 +5,13 @@
 
 import React from 'react'
 import HomeScreen from './src/components/HomeScreen'
+import {Root} from 'native-base'
 
 const App: () => React$Node = () => {
     return (
-        <HomeScreen/>
+        <Root>
+            <HomeScreen/>
+        </Root>
     )
 }
 

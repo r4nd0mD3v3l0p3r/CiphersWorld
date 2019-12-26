@@ -5,16 +5,14 @@ import {DecryptScreen} from './DecryptScreen'
 import {Overview} from '../common/Overview'
 import {AppHeader} from '../common/Header'
 
-export const CaesarTitle = 'Caesar cipher'
-const cipherDescription = 'The Caesar cipher is a substitution cipher in which each letter of a given text is replaced by a letter some fixed number' +
-    ' of positions down the alphabet. Julius Caesar used a right shift of 3 places to encrypt his messages.'
-const referenceLinks = [{site: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Caesar_cipher'}]
+export const VigenereTitle = 'Vigenere cipher'
+const cipherDescription = 'The Vigenere cipher is a polyalphabetic cipher. It uses a series of interwoven Caesar ciphers, based on the letters of a keyword.'
+const referenceLinks = [{site: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher'}]
 
-
-export const CaesarScreen = ({navigation}) => {
+export const VigenereScreen = ({navigation}) => {
     return (
         <Container>
-            <AppHeader navigation={navigation} customTitle={CaesarTitle}/>
+            <AppHeader navigation={navigation} customTitle={VigenereTitle}/>
             <Content>
                 <Tabs renderTabBar={() => <ScrollableTab/>}>
                     <Tab heading='Overview'>
@@ -32,4 +30,4 @@ export const CaesarScreen = ({navigation}) => {
     )
 }
 
-CaesarScreen.propTypes = {}
+VigenereScreen.propTypes = {}

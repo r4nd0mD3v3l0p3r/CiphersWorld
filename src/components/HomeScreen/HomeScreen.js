@@ -1,23 +1,11 @@
 import React from 'react'
-import {Body, Button, Card, CardItem, Container, Content, Header, Icon, Left, Right, Text, Title} from 'native-base'
-import {DrawerActions} from 'react-navigation-drawer'
+import {Body, Card, CardItem, Container, Content, Text} from 'native-base'
+import {AppHeader} from '../ciphers/common/Header'
 
 export const HomeScreen = ({navigation}) => {
     return (
         <Container>
-            <Header>
-                <Left>
-                    <Button
-                        transparent
-                        onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-                        <Icon name="menu"/>
-                    </Button>
-                </Left>
-                <Body>
-                    <Title>Cipher's World</Title>
-                </Body>
-                <Right/>
-            </Header>
+            <AppHeader navigation={navigation}/>
             <Content padder>
                 <Card>
                     <CardItem>

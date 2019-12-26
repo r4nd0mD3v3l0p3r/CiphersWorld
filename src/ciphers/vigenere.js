@@ -1,8 +1,8 @@
 import {Alphabet} from './core/Alphabet'
 import {CircularArray} from './core/circularArray'
 
-export const encrypt = (inputText, key) => vigenere(inputText, key, true)
-export const decrypt = (inputText, key) => vigenere(inputText, key, false)
+export const encryptText = (inputText, key) => vigenere(inputText, key, true)
+export const decryptText = (inputText, key) => vigenere(inputText, key, false)
 
 const generateKeyArray = key => {
     const array = []

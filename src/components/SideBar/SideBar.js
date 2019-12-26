@@ -6,6 +6,7 @@ const routes = [
     {name: 'About', key: 'about'},
     {name: 'Atbash', key: 'atbash'},
     {name: 'Caesar', key: 'caesar'},
+    {name: 'Vigenere', key: 'vigenere'},
 ]
 export const SideBar = ({navigation}) => {
     return (
