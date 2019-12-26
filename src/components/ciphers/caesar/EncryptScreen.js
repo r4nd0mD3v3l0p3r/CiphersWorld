@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import {Share} from 'react-native'
-import {Body, Button, Card, CardItem, Col, Container, Content, Form, Grid, Icon, Row, Text, Textarea} from 'native-base'
+import {Button, Container, Content, Form, Text, Textarea} from 'native-base'
 import {encryptText} from '../../../ciphers/caesar'
 import {ShiftPicker} from './ShiftPicker'
+import {OutputTextCard} from '../common/OutputTextCard'
 
 export const EncryptScreen = () => {
     const [inputText, setInputText] = useState('')
@@ -12,14 +12,6 @@ export const EncryptScreen = () => {
     const encrypt = () => {
         const encrypted = encryptText(inputText, shift)
         setOutputText(encrypted)
-    }
-
-    const share = async () => {
-        try {
-            await Share.share({message: outputText})
-        } catch (e) {
-
-        }
     }
 
     return (
@@ -44,32 +36,7 @@ export const EncryptScreen = () => {
                         <Text>Encrypt</Text>
                     </Button>
                 </Form>
-                <Card>
-                    <CardItem header
-                              bordered
-                              style={{marginBottom: 15}}>
-                        <Grid>
-                            <Col>
-                                <Row>
-                                    <Text>Encrypted text</Text>
-                                </Row>
-                            </Col>
-                            <Col contentContainerStyle={{flex: 1}}>
-                                <Row style={{justifyContent: 'flex-end'}}>
-                                    <Button iconLeft small transparent onPress={() => share()}>
-                                        <Icon name='share'/>
-                                        <Text>Share</Text>
-                                    </Button>
-                                </Row>
-                            </Col>
-                        </Grid>
-                    </CardItem>
-                    <CardItem>
-                        <Body>
-                            <Text>{outputText}</Text>
-                        </Body>
-                    </CardItem>
-                </Card>
+                <OutputTextCard title='Encrypted text' outputText={outputText}/>
             </Content>
         </Container>
     )
