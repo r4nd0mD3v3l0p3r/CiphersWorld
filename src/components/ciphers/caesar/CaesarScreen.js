@@ -4,32 +4,30 @@ import {EncryptScreen} from './EncryptScreen'
 import {DecryptScreen} from './DecryptScreen'
 import {Overview} from '../common/Overview'
 import {AppHeader} from '../common/Header'
+import {translate} from '../../../intl/intl'
 
-export const CaesarTitle = 'Caesar cipher'
-const cipherDescription = 'The Caesar cipher is a substitution cipher in which each letter of a given text is replaced by a letter some fixed number' +
-    ' of positions down the alphabet. Julius Caesar used a right shift of 3 places to encrypt his messages.'
 const referenceLinks = [{site: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Caesar_cipher'}]
 
-
 export const CaesarScreen = ({navigation}) => {
+    const caesarTitle = translate('caesar_title')
+    const cipherDescription = translate('caesar_description')
+
     return (
         <Container>
-            <AppHeader navigation={navigation} customTitle={CaesarTitle}/>
+            <AppHeader navigation={navigation} customTitle={caesarTitle}/>
             <Content>
                 <Tabs renderTabBar={() => <ScrollableTab/>}>
-                    <Tab heading='Overview'>
+                    <Tab heading={translate('ciphers_common_overview_title')}>
                         <Overview referenceLinks={referenceLinks}
                                   cipherDescription={cipherDescription}/>
                     </Tab>
-                    <Tab heading='Encryption'>
+                    <Tab heading={translate('ciphers_common_encryption_title')}>
                         <EncryptScreen/>
                     </Tab>
-                    <Tab heading='Decryption'>
+                    <Tab heading={translate('ciphers_common_decryption_title')}>
                         <DecryptScreen/>
                     </Tab>
                 </Tabs></Content>
         </Container>
     )
 }
-
-CaesarScreen.propTypes = {}

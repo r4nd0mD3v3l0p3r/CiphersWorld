@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import {Button, Content, Form, Text, Textarea} from 'native-base'
 import {OutputTextCard} from './OutputTextCard'
 import {ScrollView} from 'react-native'
+import {translate} from '../../../intl/intl'
 
 export const DecryptScreen = ({decryptText}) => {
     const [inputText, setInputText] = useState('')
@@ -20,21 +21,21 @@ export const DecryptScreen = ({decryptText}) => {
                     <Textarea style={{marginBottom: 15}}
                               rowSpan={5}
                               bordered
-                              placeholder='Enter text here'
+                              placeholder={translate('ciphers_common_input_text')}
                               value={inputText}
                               onChangeText={setInputText}/>
                     <Button full primary
                             style={{marginBottom: 5}}
                             onPress={() => setInputText('')}>
-                        <Text>Clear input text</Text>
+                        <Text>{translate('ciphers_common_clear_input_text_button')}</Text>
                     </Button>
                     <Button full primary
                             style={{marginBottom: 15}}
                             onPress={() => decrypt()}>
-                        <Text>Decrypt</Text>
+                        <Text>{translate('ciphers_common_decrypt_button')}</Text>
                     </Button>
                 </Form>
-                <OutputTextCard title='Decrypted text' outputText={outputText}/>
+                <OutputTextCard title={translate('ciphers_common_decrypted_text')} outputText={outputText}/>
             </Content>
         </ScrollView>
     )

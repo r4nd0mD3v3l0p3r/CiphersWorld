@@ -1,15 +1,17 @@
 import React from 'react'
 import {decryptText, encryptText} from '../../../ciphers/atbash'
 import {CommonScreen} from '../common/CommonScreen'
+import {translate} from '../../../intl/intl'
 
-const cipherDescription = 'The Atbash cipher is a monoalphabetic substitution cipher, originally used to encrypt the Hebrew alphabet.'
 const referenceLinks = [{site: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Atbash'}]
 
 export const AtbashScreen = ({navigation}) => {
+    const cipherDescription = translate('atbash_description')
+
     return (
         <CommonScreen
             navigation={navigation}
-            headerTitle={'Atbash cipher'}
+            headerTitle={translate('atbash_title')}
             decryptText={encryptText}
             encryptText={decryptText}
             cipherDescription={cipherDescription}

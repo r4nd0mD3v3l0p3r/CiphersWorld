@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Body, Button, Card, CardItem, Icon, Text, Toast} from 'native-base'
 import {Clipboard, Share} from 'react-native'
+import {translate} from '../../../intl/intl'
 
 export const OutputTextCard = ({title, outputText}) => {
     const share = async () => {
@@ -16,7 +17,7 @@ export const OutputTextCard = ({title, outputText}) => {
         Clipboard.setString(outputText)
 
         Toast.show({
-            text: 'Copied to clipboard',
+            text: translate('output_text_card_text_copied'),
             duration: 3000,
             type: 'success'
         })
@@ -36,11 +37,11 @@ export const OutputTextCard = ({title, outputText}) => {
             <CardItem footer contentContainerStyle={{flex: 1}} style={{justifyContent: 'space-between'}}>
                 <Button iconLeft small bordered onPress={() => share()}>
                     <Icon name='share'/>
-                    <Text>Share</Text>
+                    <Text>{translate('output_text_card_share')}</Text>
                 </Button>
                 <Button iconLeft small bordered onPress={() => copy()}>
                     <Icon name='copy'/>
-                    <Text>Copy</Text>
+                    <Text>{translate('output_text_card_copy')}</Text>
                 </Button>
             </CardItem>
         </Card>

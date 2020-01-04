@@ -5,6 +5,7 @@ import {EncryptScreen} from './EncryptScreen'
 import {DecryptScreen} from './DecryptScreen'
 import {Overview} from './Overview'
 import {AppHeader} from './Header'
+import {translate} from '../../../intl/intl'
 
 export const CommonScreen = ({headerTitle, encryptText, decryptText, cipherDescription, referenceLinks, navigation}) => {
     return (
@@ -12,14 +13,14 @@ export const CommonScreen = ({headerTitle, encryptText, decryptText, cipherDescr
             <AppHeader navigation={navigation} customTitle={headerTitle}/>
             <Content>
                 <Tabs renderTabBar={() => <ScrollableTab/>}>
-                    <Tab heading='Overview'>
+                    <Tab heading={translate('ciphers_common_overview_title')}>
                         <Overview referenceLinks={referenceLinks}
                                   cipherDescription={cipherDescription}/>
                     </Tab>
-                    <Tab heading='Encryption'>
+                    <Tab heading={translate('ciphers_common_encryption_title')}>
                         <EncryptScreen encryptText={encryptText}/>
                     </Tab>
-                    <Tab heading='Decryption'>
+                    <Tab heading={translate('ciphers_common_decryption_title')}>
                         <DecryptScreen decryptText={decryptText}/>
                     </Tab>
                 </Tabs>

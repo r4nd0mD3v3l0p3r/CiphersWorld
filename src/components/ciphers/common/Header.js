@@ -1,11 +1,12 @@
-import {Body, Button, Header, Icon, Left, Right, Title} from 'native-base'
+import {Body, Button, Header, Icon, Left, Title} from 'native-base'
 import {DrawerActions} from 'react-navigation-drawer'
 import React from 'react'
+import {translate} from '../../../intl/intl'
 import PropTypes from 'prop-types'
 
-const defaultTitle = 'Cipher\'s World'
-
 export const AppHeader = ({navigation, customTitle}) => {
+    const defaultTitle = translate('app_title')
+
     return (
         <Header>
             <Left>
@@ -18,7 +19,6 @@ export const AppHeader = ({navigation, customTitle}) => {
             <Body>
                 <Title>{customTitle === undefined ? defaultTitle : customTitle}</Title>
             </Body>
-            <Right/>
         </Header>
     )
 }

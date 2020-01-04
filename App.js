@@ -2,16 +2,20 @@
  * @format
  * @flow
  */
-
+import {Provider} from 'react-redux'
+import {applyMiddleware, createStore} from 'redux'
 import React from 'react'
-import HomeScreen from './src/components/HomeScreen'
-import {Root} from 'native-base'
+import rootReducer from './src/redux/rootReducer'
+import thunk from 'redux-thunk'
+import {MainView} from './src/components/MainView'
 
-const App: () => React$Node = () => {
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+const App = () => {
     return (
-        <Root>
-            <HomeScreen/>
-        </Root>
+        <Provider store={store}>
+            <MainView/>
+        </Provider>
     )
 }
 

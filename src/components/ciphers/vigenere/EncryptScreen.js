@@ -5,6 +5,7 @@ import {encryptText} from '../../../ciphers/vigenere'
 import {showInvalidKeywordToast} from './validation'
 import {OutputTextCard} from '../common/OutputTextCard'
 import {ScrollView} from 'react-native'
+import {translate} from '../../../intl/intl'
 
 export const EncryptScreen = () => {
     const [inputText, setInputText] = useState('')
@@ -27,32 +28,32 @@ export const EncryptScreen = () => {
                     <Textarea style={{marginBottom: 15}}
                               rowSpan={5}
                               bordered
-                              placeholder='Enter text here'
+                              placeholder={translate('ciphers_common_input_text')}
                               value={inputText}
                               onChangeText={setInputText}/>
                     <Textarea style={{marginBottom: 15}}
                               rowSpan={5}
                               bordered
-                              placeholder='Enter keyword here'
+                              placeholder={translate('vigenere_keyword_placeholder')}
                               value={keyword}
                               onChangeText={setKeyword}/>
                     <Button full primary
                             style={{marginBottom: 5}}
                             onPress={() => setInputText('')}>
-                        <Text>Clear input text</Text>
+                        <Text>{translate('ciphers_common_clear_input_text_button')}</Text>
                     </Button>
                     <Button full primary
                             style={{marginBottom: 5}}
                             onPress={() => setKeyword('')}>
-                        <Text>Clear keyword</Text>
+                        <Text>{translate('vigenere_clear_keyword_button')}</Text>
                     </Button>
                     <Button full primary
                             style={{marginBottom: 15}}
                             onPress={() => encrypt()}>
-                        <Text>Encrypt</Text>
+                        <Text>{translate('ciphers_common_encrypt_button')}</Text>
                     </Button>
                 </Form>
-                <OutputTextCard title='Encrypted text' outputText={outputText}/>
+                <OutputTextCard title={translate('ciphers_common_encrypted_text')} outputText={outputText}/>
             </Content>
         </ScrollView>
     )
