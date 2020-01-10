@@ -1,3 +1,5 @@
+import {AlphabetSize} from '../ciphers/core/Alphabet'
+
 export default {
     app_title: 'Ciphers World',
     sidebar_category_general: 'Generale',
@@ -51,4 +53,12 @@ export default {
     vigenere_keyword_placeholder: 'Inserisci la parola chiave qui',
     vigenere_clear_keyword_button: 'Pulisci la parola chiave',
     vigenere_keyword_not_valid: 'Parola chiave non valida. Sono ammessi solo caratteri',
+
+    hill_title: 'Cifrario di Hill',
+    hill_description: '',
+    hill_error_bad_matrix: 'La matrice deve rispettare questo formato: [[1,2],[3,4]]',
+    hill_error_not_square_matrix: 'La matrice deve essere quadrata',
+    hill_error_matrix_det_zero: 'Il determinante della matrice è zero',
+    hill_error_matrix_det_mod_not_coprimes: `Il determinante della matrice ed il modulo (${AlphabetSize}) non sono coprimi`,
+
 }

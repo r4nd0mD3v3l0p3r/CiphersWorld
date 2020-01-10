@@ -1,3 +1,5 @@
+export const AlphabetSize = 26
+
 export class Alphabet {
     alphabet = new Map(
         [

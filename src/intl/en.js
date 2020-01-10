@@ -1,3 +1,5 @@
+import {AlphabetSize} from '../ciphers/core/Alphabet'
+
 export default {
     app_title: 'Ciphers World',
     sidebar_category_general: 'General',
@@ -51,4 +53,11 @@ export default {
     vigenere_keyword_placeholder: 'Enter keyword here',
     vigenere_clear_keyword_button: 'Clear keyword',
     vigenere_keyword_not_valid: 'Keyword not valid. Only characters are allowed.',
+
+    hill_title: 'Hill cipher',
+    hill_description: '',
+    hill_error_bad_matrix: 'The matrix must respect this format: [[1,2],[3,4]]',
+    hill_error_not_square_matrix: 'The matrix must be square',
+    hill_error_matrix_det_zero: 'The matrix determinant is zero',
+    hill_error_matrix_det_mod_not_coprimes: `The matrix determinant and the mod value (${AlphabetSize}) are not coprimes`,
 }
